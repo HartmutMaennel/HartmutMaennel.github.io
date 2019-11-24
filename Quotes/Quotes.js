@@ -3,9 +3,18 @@ function main() {
     {
       question: "To break the rules, you first have to master them.",
       answers: {
-        a: "Dmitri Dmitrijewitsch Schostakowitsch",
-        b: "Audemars Piguet",
-        c: "Stanislav Grof" 
+        a: "Dmitri Dmitrijewitsch Schostakowitsch (composer)",
+        b: "Audemars Piguet (Watches / Jewellery)",
+        c: "Nikola Tesla (Inventor)" 
+      },
+      correctAnswer: "b"
+    },
+	{
+      question: "Every accomplishment starts with the decision to try.",
+	  answers: {
+        a: "John F. Kennedy",
+        b: "Adidas",
+        c: "Harvard University"
       },
       correctAnswer: "a"
     },
@@ -19,6 +28,24 @@ function main() {
       correctAnswer: "b"
     },
 	{
+      question: "I believe in standardizing automobiles. I do not believe in standardizing human beings.",
+      answers: {
+        a: "Michel Foucault",
+        b: "Henry Ford",
+        c: "Albert Einstein" 
+      },
+      correctAnswer: "c"
+    },
+	{
+      question: "Victory is paid for in sweat courage and preparation.",
+      answers: {
+        a: "Winston Churchill",
+        b: "Nike",
+        c: "Robert Edward Lee" 
+      },
+      correctAnswer: "b"
+    },
+	{
       question: "To Read Too Many Books is Harmful.",
       answers: {
         a: "Albert Einstein",
@@ -27,41 +54,23 @@ function main() {
       },
       correctAnswer: "c"
     },
-	{
-      question: "I believe in standardizing automobiles. I do not believe in standardizing human beings.",
-      answers: {
-        a: "Michel Foucault",
-        b: "Ferdinand Porsche",
-        c: "Albert Einstein" 
-      },
-      correctAnswer: "a"
-    },
     {
       question: "If you can dream it, you can do it",
       answers: {
-        a: "Walt Disney",
-        b: "Coca cola",
-        c: "Stanislav Grof" 
+        a: "Stanislav Grof",
+        b: "Air China",
+        c: "Walter Elias Disney" 
       },
-      correctAnswer: "a"
+      correctAnswer: "c"
     },
     {
       question: "Don't be a Maybe",
       answers: {
-        a: "Che Guevarra",
+        a: "Ernesto Che Guevara",
         b: "Marlboro",
-        c: "Jean Paul Sartre"
+        c: "Barack Obama"
       },
       correctAnswer: "b"
-    },
-    {
-      question: "Unless you dream, you are not going to achieve anything.",
-      answers: {
-        a: "Richard Branson",
-        b: "Gitanes",
-        c: "Karl Marx",
-      },
-      correctAnswer: "a"
     },
 	{
       question: "Think small.",
@@ -73,11 +82,11 @@ function main() {
       correctAnswer: "a"
     },
     {
-      question: "Just do it.",
+      question: "Rewrite history. Redefine the position.",
       answers: {
-        a: "Frank Sinatra",
+        a: "Ulysses S. Grant",
         b: "Nike",
-        c: "Albert Camus"
+        c: "Howard Zinn"
       },
       correctAnswer: "b"
     },
@@ -85,7 +94,7 @@ function main() {
       question: "Small is beautiful.",
       answers: {
         a: "E. F. Schumacher",
-        b: "Piaget watches / jewelry",
+        b: "Morris Motor Company",
         c: "Aristotele"
       },
       correctAnswer: "a"
@@ -104,9 +113,36 @@ function main() {
       answers: {
         a: "Michel Foucault",
         b: "Pepsi",
-        c: "Che Guevara"
+        c: "Ernesto Che Guevara"
       },
       correctAnswer: "b"
+    },
+	{
+      question: "I believe in redefining my impossible.",
+      answers: {
+        a: "Nikola Tesla",
+        b: "Nike",
+        c: "Elon Musk"
+      },
+      correctAnswer: "b"
+    },
+	{
+      question: "Unless you dream, you are not going to achieve anything.",
+      answers: {
+        a: "Richard Branson",
+        b: "Soichiro Honda",
+        c: "Karl Marx",
+      },
+      correctAnswer: "a"
+    },
+    {
+      question: "When something is important enough, you do it even if the odds are not in your favor.",
+      answers: {
+        a: "Mao Zedong",
+        b: "Nike",
+        c: "Elon Musk"
+      },
+      correctAnswer: "c"
     },
 	{
       question: "Tell me how you read and I'll tell you who you are.",
@@ -125,6 +161,24 @@ function main() {
         c: "Thomas Alva Edison"
       },
       correctAnswer: "b"
+    },
+    {
+      question: "Be realistic: Demand the impossible!",
+	  answers: {
+        a: "Ernesto Che Guevara",
+        b: "Tesla Inc.",
+        c: "Herbert Marcuse"
+      },
+      correctAnswer: "a"
+    },	
+    {
+      question: "I think it is possible for ordinary people to choose to be extraordinary.",
+	  answers: {
+        a: "John F. Kennedy",
+        b: "Nike",
+        c: "Elon Musk"
+      },
+      correctAnswer: "c"
     }
   ];
   
