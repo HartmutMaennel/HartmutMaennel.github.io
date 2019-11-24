@@ -1,6 +1,42 @@
 function main() {
   const myQuestions = [
     {
+      question: "To break the rules, you first have to master them.",
+      answers: {
+        a: "Dmitri Dmitrijewitsch Schostakowitsch",
+        b: "Audemars Piguet",
+        c: "Stanislav Grof" 
+      },
+      correctAnswer: "a"
+    },
+    {
+      question: "Reach out and touch someone.",
+      answers: {
+        a: "Mahatma Gandhi",
+        b: "AT&T",
+        c: "Mother Theresa" 
+      },
+      correctAnswer: "b"
+    },
+	{
+      question: "To Read Too Many Books is Harmful.",
+      answers: {
+        a: "Albert Einstein",
+        b: "MTV",
+        c: "Mao Zedong" 
+      },
+      correctAnswer: "c"
+    },
+	{
+      question: "I believe in standardizing automobiles. I do not believe in standardizing human beings.",
+      answers: {
+        a: "Michel Foucault",
+        b: "Ferdinand Porsche",
+        c: "Albert Einstein" 
+      },
+      correctAnswer: "a"
+    },
+    {
       question: "If you can dream it, you can do it",
       answers: {
         a: "Walt Disney",
@@ -30,7 +66,7 @@ function main() {
 	{
       question: "Think small.",
       answers: {
-        a: "Volkswagen",
+        a: "Volkswagen, 1959",
         b: "Green Party, Germany 1982",
         c: "Muhammad Yunus, Nobel Prize 2006"
       },
@@ -82,11 +118,11 @@ function main() {
       correctAnswer: "c"
     },
 	{
-      question: "Justice for working people.",
+      question: "The only one who can tell you \"You can't\" is you. And you don't have to listen.",
       answers: {
-        a: "Friedrich Engels",
-        b: "Thompsons Solicitors",
-        c: "John Adams"
+        a: "Friedrich Nietzsche",
+        b: "Nike",
+        c: "Thomas Alva Edison"
       },
       correctAnswer: "b"
     }
