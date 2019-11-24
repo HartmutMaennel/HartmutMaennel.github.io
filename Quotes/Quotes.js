@@ -32,7 +32,7 @@ function main() {
       answers: {
         a: "Volkswagen",
         b: "Green Party, Germany 1982",
-        c: "Muhammad Yunus, Nobel Prize winner",
+        c: "Muhammad Yunus, Nobel Prize 2006"
       },
       correctAnswer: "a"
     },
@@ -41,7 +41,52 @@ function main() {
       answers: {
         a: "Frank Sinatra",
         b: "Nike",
-        c: "Albert Camus",
+        c: "Albert Camus"
+      },
+      correctAnswer: "b"
+    },
+	{
+      question: "Small is beautiful.",
+      answers: {
+        a: "E. F. Schumacher",
+        b: "Piaget watches / jewelry",
+        c: "Aristotele"
+      },
+      correctAnswer: "a"
+    },
+	{
+      question: "Everything flows.",
+      answers: {
+        a: "Jacques-Yves Cousteau",
+        b: "Pepsi",
+        c: "Heraclitus"
+      },
+      correctAnswer: "c"
+    },
+	{
+      question: "Ask for more.",
+      answers: {
+        a: "Michel Foucault",
+        b: "Pepsi",
+        c: "Che Guevara"
+      },
+      correctAnswer: "b"
+    },
+	{
+      question: "Tell me how you read and I'll tell you who you are.",
+      answers: {
+        a: "Thomas Jefferson",
+        b: "New York Times",
+        c: "Martin Heidegger"
+      },
+      correctAnswer: "c"
+    },
+	{
+      question: "Justice for working people.",
+      answers: {
+        a: "Friedrich Engels",
+        b: "Thompsons Solicitors",
+        c: "John Adams"
       },
       correctAnswer: "b"
     }
