@@ -1,0 +1,160 @@
+<!DOCTYPE html><html><body>
+<a href="Keras.html">up: Keras</a><br/>
+<br/>
+&nbsp;&nbsp;<a href="KerasMNIST.html">MNIST</a>
+&nbsp;&nbsp;<a href="SparseAutoencoder.html">Sparse Autoencoder</a>
+&nbsp;&nbsp;<a href="RegulatedDual.html">RegulatedDual</a>
+
+<h1>Regulated Dual</h1>
+
+<h2>Set up</h2>
+<pre>
+from __future__ import absolute_import, division, print_function, unicode_literals
+
+import numpy as np
+import tensorflow as tf
+from tensorflow import keras
+from tensorflow.keras import layers
+
+tf.enable_v2_behavior()
+
+tf.keras.backend.clear_session()  # For easy reset of notebook state.
+</pre>
+
+
+<h2>Define Dual Layers</h2>
+<pre>
+# Input:  (?, n) with n = input_dim + input_dim
+# Output: (?, m) with m = units1 + units2 + units1 + units2
+# Weights: W1: input_dim --> units1
+#          W2: input_dim --> units2
+# Losses:  ActivationLoss on W2 * Input1
+
+class DualLayerA(layers.Layer):
+  def __init__(self, d_in, d_out_1, d_out_2, loss_rate):
+    super(DualLayerA, self).__init__()
+    self.d_in = d_in
+    self.d_out_1 = d_out_1
+    self.d_out_2 = d_out_2
+    self.loss_rate = loss_rate
+
+  def build(self, input_shape):
+    # input_dim2 = input_shape[-1]
+    # assert input_dim2 = 2 * self.d_in
+    self.w1 = self.add_weight(shape=(self.d_in, self.d_out_1),
+                              initializer='random_normal',
+                              trainable=True)
+    self.b1 = self.add_weight(shape=(self.d_out_1,),
+                              initializer='random_normal',
+                              trainable=True)
+    self.w2 = self.add_weight(shape=(self.d_in, self.d_out_2),
+                              initializer='random_normal',
+                              trainable=True)
+    self.b2 = self.add_weight(shape=(self.d_out_2,),
+                              initializer='random_normal',
+                              trainable=True)
+
+  def call(self, inputs):
+    d = self.d_in
+    input1 = tf.slice(inputs, begin=(0, 0), size=[-1, d])  
+    input2 = tf.slice(inputs, begin=(0, d), size=[-1, d])
+    output1 = tf.matmul(input1, self.w1) + self.b1
+    output2 = tf.matmul(input1, self.w2) + self.b2
+    output3 = tf.matmul(input2, self.w1) + self.b1
+    output4 = tf.matmul(input2, self.w2) + self.b2      
+    self.add_loss(self.loss_rate * tf.reduce_sum(tf.math.square(output2)))
+    return tf.concat([output1, output2, output3, output4], -1)
+    
+
+# Input:  (?, n) with n = d1 + d2 + d1 + d2
+# Output: (?, m) with m = d_out + d_out
+# Weights: w3: d1 --> d_out
+#          w4: d2 --> d_out
+
+class DualLayerB(layers.Layer):
+  def __init__(self, d_in_1, d_in_2, d_out):
+    super(DualLayerB, self).__init__()
+    self.d1 = d_in_1
+    self.d2 = d_in_2
+    self.d_out = d_out
+
+  def build(self, input_shape):
+    # input_dim = input_shape[-1]
+    d1 = self.d1
+    d2 = self.d2
+    d_out = self.d_out
+    # assert input_dim == 2 * (d1 + d2)
+    self.w3 = self.add_weight(shape=(self.d1, d_out),
+                              initializer='random_normal',
+                              trainable=True)
+    self.b3 = self.add_weight(shape=(d_out,),
+                              initializer='random_normal',
+                              trainable=True)
+    self.w4 = self.add_weight(shape=(self.d2, d_out),
+                              initializer='random_normal',
+                              trainable=True)
+    self.b4 = self.add_weight(shape=(d_out,),
+                              initializer='random_normal',
+                              trainable=True)
+
+  def call(self, inputs):
+    d1 = self.d1
+    d2 = self.d2
+    input1 = tf.slice(inputs, begin=(0, 0), size=[-1, d1])  
+    # input2 = tf.slice(inputs, begin=(0, d1), size=[-1, d2])
+    input3 = tf.slice(inputs, begin=(0, d1+d2), size=[-1, d1])  
+    input4 = tf.slice(inputs, begin=(0, d1+d2+d1), size=[-1, d2])
+
+    output1 = tf.matmul(input1, self.w3) + self.b3
+    output2 = (tf.matmul(input3, self.w3) + self.b3 
+               + tf.matmul(input4, self.w4) + self.b4)
+    
+    result = tf.concat([output1, output2], -1)
+    return result
+</pre>
+
+
+<h2>Define the auto encoder</h2>
+<pre>
+inputs = keras.Input(shape=(6,), name="dual_3")
+encoded = DualLayerA(3, 2, 1, 0.1)(inputs)
+encoder = keras.Model(inputs=inputs, outputs=encoded)
+
+inputs = keras.Input(shape=(6,), name="dual_2_1")
+decoded = DualLayerB(2,1,3)(inputs)
+decoder = keras.Model(inputs=inputs, outputs=decoded)
+
+auto_encoder = keras.models.Sequential([encoder, decoder])
+auto_encoder.summary()
+</pre>
+
+
+<h2>Train the auto encoder</h2>
+<pre>
+ab_train = np.random.normal(size=[200,2])
+X_train = np.array([[a,b,(a+b) / 2] for [a,b] in ab_train])
+ab_test = np.random.normal(size=[200,2])
+X_test = np.array([[a,b,(a+b) / 2] for [a,b] in ab_test])
+X2_train = np.random.normal(size=[200,3])
+X2_test = np.random.normal(size=[200,3]
+xpairs_train = np.concatenate((X_train, X2_train), axis=1)
+xpairs_test = np.concatenate((X_test, X2_test), axis=1)
+
+auto_encoder.compile(loss="mean_squared_error", optimizer=keras.optimizers.SGD(lr= 0.1))
+history = auto_encoder.fit(xpairs_train, xpairs_train, epochs=50, 
+                 validation_data=[xpairs_test, xpairs_test], verbose=1)
+</pre>
+
+
+<h2>Look at results</h2>
+<pre>
+xx = xpairs_test[:5]
+xx
+
+yy = encoder(xx)
+yy
+
+zz=decoder(yy)
+zz
+</pre
+</body></html>

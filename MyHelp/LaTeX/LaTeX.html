@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<body>
+<a href="../MyHelp.html">up: MyHelp</a>
+<br/>
+<br/>
+<a href="..\HTML\Html.html">HTML</a>
+&nbsp;&nbsp; <a href="..\LaTeX\LaTeX.html">LaTeX</a>
+&nbsp;&nbsp; <a href="..\Python\Python.html">Python</a>
+&nbsp;&nbsp; <a href="..\Tensorflow\Tensorflow.html">Tensorflow</a>
+<h1>LaTeX</h1>
+<br/>
+<h2>Troubleshooting</h2>
+<a href="./troubleshooter.html"> troubleshooter.html </a><br/>
+
+<h2>Calling pdflatex / bibtex</h2>
+<br/>
+To translate a LaTeX file: 
+<pre>
+pdflatex mypaper.tex
+bibtex mypaper.aux        (if using .bib file)
+pdflatex mypaper.tex
+</pre>
+In the tex file:
+<pre>
+\bibliography{mypaper}
+</pre>
+In the bib file use keywords "and", "and others" or {...} inside "..." like this:
+<pre> 
+ author= {Samuel L. Smith and Quoc V. Le},
+ author= "Pokholok and others",
+ author  "{Pokholok et al.}",
+</pre>
+<br/>
+<a href="./example_paper.bib.txt"> Example .bib file </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br/>
+<br/>
+(see below for translating a TeX file which uses psTricks)<br/>
+<br/>
+
+
+<h2>Include graphics</h2>
+<pre>
+\includegraphics[width=0.5\textwidth]{images/test0.png}
+</pre>
+
+To translate a file using psTricks: 
+<pre>pdflatex -shell-escape source.tex</pre>
+
+The file should contain
+<pre>
+\usepackage[pdf]{pstricks}%
+\usepackage{pst-node,pstricks-add,pst-plot}%
+</pre>
+First line should be %&amp;pdflatex (or nothing, but not %&amp;latex, this will give dvi output)<br/>
+<br/>
+
+<h2>Equations, labels</h2>
+<pre>
+\begin{equation}
+    ... \label{eq:optimal}
+\end{equation}
+... a minimum for \eqref{eq:optimal} is ...
+
+\begin{eqnarray}
+  ... &=& ... \nonumber  \\
+  ... &=& ... \label{eq:update} \\
+  ... &=& ... \nonumber
+\end{eqnarray}
+
+\begin{eqnarray*}
+  \lefteqn{....} \\
+  ... &=& ...\\
+  ... &=& ...
+\end{eqnarray*}
+
+\begin{multline*}
+  a + b  \cdot \left(    x + y   \right.\\
+               \left.  + z + w   \right)
+\end{multline*}
+
+\begin{equation}\tag{2.12}    % use "2.12" instead of automatic numbering
+\begin{aligned}               % display at between the heights of the two lines
+  ... \\
+  ...
+\end{aligned}
+\end{equation}
+</pre>
+<a href="https://en.wikibooks.org/wiki/LaTeX/Labels_and_Cross-referencing"> 
+Labels and cross-referencing </a>
+
+<h2>Structures: Matrix, cases, binomial coefficients, roots</h2>
+<pre>
+\left(\begin{matrix} \epsilon & z \\
+                     0        & 1 
+      \end{matrix}
+\right)
+
+\begin{cases}  w_i'\cdot x  & \hbox{for}\  k\in A_i \\
+               0            & \hbox{else}       
+\end{cases}
+
+{n \choose k}
+
+\sqrt[n]{|a|^n + |b|^n}
+
+</pre>
+<h2>Symbols</h2>
+<pre>
+\newcommand{\BR}{{\mathbb R}}
+\newcommand{\calF}{{\mathcal F}}
+\nabla
+\frac{\partial L)}{\partial x}
+\le \ge \ll \gg (lower equal, greater equal, lower lower, greater greater)
+\perp  (perpendicular, orthogonal)
+\square, \blacksquare
+</pre>
+<a href="https://en.wikibooks.org/wiki/LaTeX/Mathematics#List_of_Mathematical_Symbols"> Mathematics symbols </a>
+
+<h2>Arrows</h2>
+<pre>
+\usepackage{amsmath}
+...
+$\BR^n \xrightarrow[under]{above} \BR^m \xrightarrow{g} \BR^k$
+</pre>
+<a href="https://tex.stackexchange.com/questions/103988/rightarrow-with-text-above-it">text under / above arrow</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://tex.stackexchange.com/questions/136772/dotted-or-dashed-xrightarrow">text under / above dashed arrow</a>
+
+<h2>Tables</h2>
+<pre>
+\begin{tabular}{l|l||l}
+  $x_1$ & $x_2$ & y \\
+  \hline 
+  -1 & -1 & 0  \\
+  -1 &  1 & 1  \\
+   1 &  1 & 2  \\
+\end{tabular}
+</pre>
+<a href="https://en.wikibooks.org/wiki/LaTeX/Tables"> Tables </a>
+
+<h2>Columns</h2>
+<pre>
+\usepackage{multicol}
+...
+\begin{multicols}{2}
+...
+\end{multicols}
+</pre>
+<a href="https://tex.stackexchange.com/questions/285443/how-to-produce-a-double-column-document-in-latex"> double columns</a>
+
+<h2>Horizontal lines in text</h2>
+<pre>
+  \noindent\makebox[\linewidth]{\rule{\paperwidth}{0.4pt}}
+  \noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}}
+</pre>
+
+<h2>Cross references between documents</h2>
+<pre>
+  \usepackage{xr}
+  \externaldocument{supplement}
+  \setcounter{section}{8}  % 8 = last section in previous document
+</pre>
+<a href="https://tex.stackexchange.com/questions/14364/cross-referencing-between-different-files"> Stack exchange </a>
+
+<h2>Cyrillic symbols</h2>
+<pre>
+\usepackage[OT2,T1]{fontenc}%
+\DeclareSymbolFont{cyrletters}{OT2}{wncyr}{m}{n}%
+\DeclareMathSymbol{\Sha}{\mathalpha}{cyrletters}{"58}%
+\DeclareMathSymbol{\De}{\mathalpha}{cyrletters}{"44}%
+\DeclareMathSymbol{\de}{\mathalpha}{cyrletters}{"64}%
+</pre>
+<a href="http://texdoc.net/texmf-dist/doc/fonts/amsfonts/amsfndoc.pdf">AMS fonts doc</a> 
+&nbsp;&nbsp;(last pages contain font charts, p.33: Cyrillic)
+
+</body></html>

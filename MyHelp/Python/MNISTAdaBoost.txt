@@ -1,0 +1,11 @@
+n=10000
+training_in =  [img.reshape((784)) for img in x_train[:n]]
+training_label = y_train[:n]
+test_in =  [img.reshape((784)) for img in x_test]
+test_label = y_test
+
+ada = AdaBoostClassifier()
+ada.fit(training_in, training_label)
+print("Accuracy = {:.2f}".format(ada.score(test_in, test_label)))
+
+--> Accuracy = 0.71

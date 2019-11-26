@@ -1,0 +1,13 @@
+
+n=60000
+training_in =  [img.reshape((784)) for img in x_train[:n]]
+training_label = y_train[:n]
+test_in =  [img.reshape((784)) for img in x_test]
+test_label = y_test
+
+from sklearn.ensemble import RandomForestClassifier
+randfor = RandomForestClassifier(max_depth=15)
+print("Accuracy = {:.2f}".format(randfor.score(test_in, test_label)))
+
+--> Accuracy = 0.95
+ 

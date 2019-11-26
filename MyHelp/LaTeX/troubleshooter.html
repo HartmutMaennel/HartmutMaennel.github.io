@@ -1,0 +1,30 @@
+<!DOCTYPE html><html><body>
+<h1>LaTeX troubleshooting</h1>
+
+<h2>Does not load \includegraphics{images/epsilon0.1.png}</h2>
+Multiple dots don't work - rename to epsilon0_1.png
+<br/>
+<br/>
+
+<h2>\beamer@endinputifotherversion</h2>
+Delete the .nav and .toc files
+<a href="https://tex.stackexchange.com/questions/352017/miktex-and-beamer-error-beamerendinputifotherversion">
+ (stackexchange link)</a>
+<br/>
+<br/>
+
+<h2>"No room for a new \dimen":</h2>
+Include "\usepackage{etex}" as first \usepackage (after \documentclass)
+<a href="https://tex.stackexchange.com/questions/38607/no-room-for-a-new-dimen"> (stackexchange link) </a><br/>
+<br/>
+<br/>
+
+<h2>!Undefined control sequence. recently read \c@lor@to@ps</h2>
+pdflatex --shell-escape myPaper.tex<br/>
+\usepackage{auto-pst-pdf} after pstricks<br/>
+<a href="https://tex.stackexchange.com/questions/68870/pstricks-error-undefined-control-sequence-recently-read-clortops">
+(stackexchange link)</a><br/>
+<br/>
+
+
+</body></html>

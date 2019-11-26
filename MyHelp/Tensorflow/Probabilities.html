@@ -1,0 +1,59 @@
+<!DOCTYPE html><html><body>
+<a href="Tensorflow.html">up: Tensorflow</a><br/>
+<br/>
+&nbsp;&nbsp;<a href="Keras.html">Keras</a>
+&nbsp;&nbsp;<a href="CustomLayers.html">Custom Layers</a>
+&nbsp;&nbsp;<a href="Datasets.html">Datasets</a>
+&nbsp;&nbsp;<a href="Probabilities.html">Probabilities</a>
+
+<h1>Probabilities</h1>
+&nbsp;&nbsp; <a href="https://www.tensorflow.org/probability">Overview and further pointers</a>
+
+
+<h2>Distributions</h2>
+<pre>
+import tensorflow_probability as tfp
+tfd = tfp.distributions
+</pre>
+
+&nbsp;&nbsp; <a href="https://www.tensorflow.org/probability/api_docs/python/tfp/distributions">Module "distributions"</a>
+&nbsp;&nbsp; <a href="https://www.tensorflow.org/probability/api_docs/python/tfp/distributions/Distribution"> Class "Distribution"</a>
+<br/>
+<br/>
+&nbsp;&nbsp; <a href="https://www.tensorflow.org/probability/api_docs/python/tfp/distributions/Normal">Standard Normal Distribution</a><br/>
+&nbsp;&nbsp; <a href="https://www.tensorflow.org/probability/api_docs/python/tfp/distributions/MultivariateNormalLinearOperator">General Multivariate Normal Distribution</a><br/>
+<br/>
+&nbsp;&nbsp; <a href="https://www.tensorflow.org/probability/api_docs/python/tfp/distributions/TransformedDistribution">Transformed Distributions</a><br/>
+
+<h2>Bijectors</h2>
+<pre>
+import tensorflow_probability as tfp
+tfb = tfp.bijectors
+</pre>
+&nbsp;&nbsp; <a href="https://www.tensorflow.org/probability/api_docs/python/tfp/bijectors">
+Module "bijectors"</a>
+&nbsp;&nbsp; <a href="https://www.tensorflow.org/probability/api_docs/python/tfp/bijectors/Bijector">
+Class "Bijector"</a><br/>
+<br/>
+&nbsp;&nbsp; <a href="https://www.tensorflow.org/probability/api_docs/python/tfp/bijectors/Affine">Affine</a>
+
+<h2>Math</h2>
+<pre>
+import tensorflow_probability as tfp
+...tfp.maths.fill_triangular(L)....
+</pre>
+
+
+
+<h2>Snippets</h2>
+<pre>
+# Define a batch of two scalar valued Normals.
+# Both have mean 1, but different standard deviations.
+dist = tfd.Normal(loc=1., scale=[11, 22.])
+
+# Evaluate the pdf of both distributions on the same point, 3.0,
+# returning a length 2 tensor.
+dist.prob(3.0)
+</pre>
+
+</body></html>

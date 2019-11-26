@@ -1,0 +1,123 @@
+<!DOCTYPE html><html><body>
+<h1>Python - Plotting</h1>
+<h2>Matplotlib</h2>
+
+<h4>Python import</h4>
+<pre>
+import matplotlib.pyplot as plt
+</pre>
+
+<h4>Simple plot</h4>
+<pre>
+plt.clf()
+axes = plt.gca()
+axes.set_xlim([0,6.3])
+axes.set_ylim([-1.1, 1.1])
+x = np.linspace(0, 2*3.14159, 100)
+plt.plot(x, np.sin(x), 'b', x, np.cos(x), 'r--')
+plt.savefig(".../trig.png")
+plt.show()
+</pre>
+
+<h4>Simple plots, different lines in different colors</h4>
+<pre>
+plt.plot(range(112), ba[:,0])
+plt.plot(range(112), ba[:,1])
+plt.plot(range(112), ba[:,2])
+</pre>
+
+<h4>Complete example</h4>
+<pre>
+x_min = -0.1
+x_max = 6.4
+y_min = -1.1
+y_max = 1.1
+xrange = np.arange(x_min, x_max, 0.1)
+def f(t):
+return np.sin(t)
+plt.clf()
+axes = plt.gca()
+axes.set_xlim([x_min, x_max])
+axes.set_ylim([y_min, y_max])
+plt.plot(xrange, np.array([f(t) for t in xrange]))
+x = [0, np.pi/2, np.pi, np.pi * 1.5, 2 * np.pi]
+y = [0, 1, 0, -1, 0]
+plt.plot(x,y, marker='o', linestyle=' ')
+path = "/usr/local/.../test"
+plt.savefig(path + ".png")
+</pre>
+
+<h4>Contour plots</h4>
+<pre>
+px = np.zeros([nx, ny])
+py = np.zeros([nx, ny])
+pz = np.zeros([nx, ny])
+for ix in range(nx):
+for iy in range(ny):
+px[ix,iy] = points3[ix + nx * iy, 0]
+py[ix,iy] = points3[ix + nx * iy, 1]
+pz[ix,iy] = points3[ix + nx * iy, 2]
+plt.figure()
+plt.clf()
+levels = np.arange(-10, 4, 0.5)
+CS = self.axes.contour(px, py, pz, levels=levels)
+self.axes.clabel(CS, inline=1, fontsize=10)
+self.fig.suptitle(title)
+self.fig.savefig(path)
+</pre>
+<h4>Filled polygons</h4>
+<pre>
+from matplotlib.patches import Polygon
+from matplotlib.collections import PatchCollection
+patches = []
+corners = [[5,0],[2,4],[-2,4],[-5,0],[-2,-4],[2,-4],[5,0]]
+for i in range(6):
+polygon = Polygon([[0,0],corners[i], corners[i+1],[0,0]])
+patches.append(polygon)
+p = PatchCollection(patches, cmap=matplotlib.cm.jet, alpha=0.4)
+p.set_array(np.arange(0,1.01,0.2)) # different colors
+axes.add_collection(p)
+</pre>
+
+<h4>Arrow</h4>
+ax = plt.axes()<br/>
+ax.arrow(x_start, y_start, x_end, y_end, head_width=0.05, head_length=0.1, fc='black', ec='black')
+<br/>
+
+<h4>Histogram</h4>
+plt.hist(x, bins=None, ...)<br/>
+<a href="https://matplotlib.org/1.2.1/examples/pylab_examples/histogram_demo.html"> histogram_demo</a>
+&nbsp;&nbsp;<a href="https://matplotlib.org/api/pyplot_api.html"> matplotlib commands</a><br/>
+
+<h4>Heat map</h4>
+im = arr.reshape(28,28) &nbsp; &nbsp; # some numpy array im<br/>
+plt.imshow(im, interpolation='none') &nbsp; &nbsp; # heat map<br/>
+<br/>
+
+<h4>Surface plot</h4>
+<pre>
+from mpl_toolkits.mplot3d import axes3d, Axes3D
+x = np.linspace(0, nx - 1, nx)
+y = np.linspace(0, ny - 1, ny)
+x, y = np.meshgrid(x, y)
+result = np.sin(np.sqrt(x**2 + y**2))
+fig = plt.figure()
+ax = Axes3D(fig)
+ax.plot_surface(x, y, result, rstride = 1, cstride =1 )
+</pre>
+<br/>
+
+<h4>Subplots</h4>
+def weightsForDigit(digit):<br/>
+&nbsp;&nbsp; im0 = np.zeros([28,28])<br/>
+&nbsp;&nbsp; ...<br/>
+&nbsp;&nbsp; f, (ax0, ax1, ax2) = plt.subplots(1, 3, sharey=True)<br/>
+&nbsp;&nbsp; f.set_figwidth(19)<br/>
+&nbsp;&nbsp; ax0.imshow(im0, interpolation='none')<br/>
+&nbsp;&nbsp; ax1.imshow(im1, interpolation='none')<br/>
+&nbsp;&nbsp; ax2.imshow(im2, interpolation='none')<br/>
+&nbsp;&nbsp; return f<br/>
+<br/>
+for i in range(10):<br/>
+&nbsp;&nbsp; plt.show(weightsForDigit(i))<br/>
+</body></html>

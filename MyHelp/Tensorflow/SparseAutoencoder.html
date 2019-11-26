@@ -1,0 +1,110 @@
+<!DOCTYPE html><html><body>
+<a href="Keras.html">up: Keras</a><br/>
+<br/>
+&nbsp;&nbsp;<a href="KerasMNIST.html">MNIST</a>
+&nbsp;&nbsp;<a href="SparseAutoencoder.html">Sparse Autoencoder</a>
+&nbsp;&nbsp;<a href="RegulatedDual.html">RegulatedDual</a>
+
+<h1>Sparse Autoencoder</h1>
+
+<h2>Set up</h2>
+<pre>
+import numpy as np
+import tensorflow as tf
+from tensorflow import keras
+
+ds_mnist = keras.datasets.mnist 
+ds_fashion = keras.datasets.fashion_mnist
+
+ds = ds_mnist.load_data()
+# ds = ds_fashion.load_data()
+
+# page 298
+(X_train_full, y_train_full),(X_test, y_test) = ds
+
+X_valid, X_train = X_train_full[:5000] / 255.0, X_train_full[5000:] / 255.0
+y_valid, y_train = y_train_full[:5000], y_train_full[5000:]
+</pre>
+
+
+<h2>Train a sparse Autoencoder</h2>
+
+<pre>
+# page 583
+sparse_l1_encoder = keras.models.Sequential([
+  keras.layers.Flatten(input_shape=[28,28]),
+  keras.layers.Dense(200, activation="selu"),
+  keras.layers.Dense(500, activation="sigmoid"),
+  keras.layers.ActivityRegularization(l1=0.001)
+])
+sparse_l1_decoder = keras.models.Sequential([
+  keras.layers.Dense(200, activation="selu", input_shape=[500]),
+  keras.layers.Dense(28*28, activation="sigmoid"),
+  keras.layers.Reshape([28,28])
+])
+# page 573
+sparse_l1_ae = keras.models.Sequential([sparse_l1_encoder, sparse_l1_decoder])
+sparse_l1_ae.compile(loss="binary_crossentropy", optimizer=keras.optimizers.SGD(lr=1.5))
+history = sparse_l1_ae.fit(X_train, X_train, epochs=20,
+                           validation_data=[X_valid, X_valid])
+</pre>
+
+
+<h2>Plot the reconstruction</h2>
+<pre>
+import os
+import matplotlib as mpl
+import matplotlib.pyplot as plt
+
+# Where to save the figures
+IMAGES_PATH = "/usr/local/.../autoencoder/"
+if not os.path.exists(IMAGES_PATH):
+  os.makedirs(IMAGES_PATH)
+
+mpl.rc('axes', labelsize=14)
+mpl.rc('xtick', labelsize=12)
+mpl.rc('ytick', labelsize=12)
+
+def save_fig(fig_id, tight_layout=True, fig_extension="png", resolution=300):
+    path = os.path.join(IMAGES_PATH, fig_id + "." + fig_extension)
+    print("Saving figure", fig_id, " at {" + path + "}")
+    if tight_layout:
+        plt.tight_layout()
+    plt.savefig(path, format=fig_extension, dpi=resolution)
+
+def plot_image(image):
+  plt.imshow(image, cmap="binary", interpolation="none")
+  plt.axis("off")
+
+def show_reconstructions(model, images=X_valid, n_images=5):
+  reconstructions = model.predict(images[:n_images])
+  fig = plt.figure(figsize=(n_images * 1.5, 3))
+  for image_index in range(n_images):
+    plt.subplot(2, n_images, 1 + image_index)
+    plot_image(images[image_index])
+    plt.subplot(2, n_images, 1 + n_images + image_index) # , format=fig_extension, dpi=resolution)
+    plot_image(reconstructions[image_index])
+
+show_reconstructions(sparse_l1_ae)
+save_fig("reconstruction_plot")
+</pre>
+
+
+
+<h2>External Links</h2>
+<a href="https://github.com/ageron/handson-ml2/blob/master/17_autoencoders_and_gans.ipynb">
+Notebook with autoencoder code
+<br/>
+<a href="CustomLayers.html">Custom Layers</a>
+<br/>
+<a href="https://www.tensorflow.org/guide/keras/custom_layers_and_models">Guide to writing layers and models from scratch with subclassing</a>
+<br/>
+
+<a href="https://www.tensorflow.org/api_docs/python/tf/keras/layers/Layer">tf.keras.layers.Layer<a/>:
+Base class Layer<br/>
+<a href="https://www.tensorflow.org/api_docs/python/tf/keras/losses">tf.keras.losses</a>:
+Built-in loss functions.
+<br/>
+
+
+</body></html>
