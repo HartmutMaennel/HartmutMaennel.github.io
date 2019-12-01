@@ -18,7 +18,7 @@ function main() {
         c: "Nikola Tesla" 
       },
       correctAnswer: "b",
-	  explanation: "<a href=\"http://www.thewatchquote.com/Audemars-Piguet-today-announces-the-launch-of-its-new-ad-campaign-To-break-the-rules-you-must-first-master-them-No_8925.htm\">Correct Answer</a>: b"
+	  explanation: "<a href=\"https://filip.modderie.be/to-break-the-rules-you-must-first-master-them/\">Correct Answer</a>: b"
     },
     {
       question: "Reach out and touch someone.",
