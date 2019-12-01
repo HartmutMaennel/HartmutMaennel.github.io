@@ -7,7 +7,8 @@ function main() {
         b: "Adidas",
         c: "S&oslash;ren Kierkegaard"
       },
-      correctAnswer: "a"
+      correctAnswer: "a",
+	  explanation: "Correct answer: a"
     },
     {
       question: "To break the rules, you first have to master them.",
@@ -16,7 +17,8 @@ function main() {
         b: "Audemars Piguet Watches",
         c: "Nikola Tesla" 
       },
-      correctAnswer: "b"
+      correctAnswer: "b",
+	  explanation: "<a href=\"http://www.thewatchquote.com/Audemars-Piguet-today-announces-the-launch-of-its-new-ad-campaign-To-break-the-rules-you-must-first-master-them-No_8925.htm\">Correct Answer</a>: b"
     },
     {
       question: "Reach out and touch someone.",
@@ -25,7 +27,8 @@ function main() {
         b: "AT&T",
         c: "Mother Theresa" 
       },
-      correctAnswer: "b"
+      correctAnswer: "b",
+	  explanation: "<a href=\"https://www.youtube.com/watch?v=OapWdclVqEY\"> Correct Answer</a>: b"
     }
   ];
   
@@ -66,8 +69,12 @@ function main() {
   function showResults() {
     // gather answer containers from our quiz
     submitButton.style.display = "none";
-	submitted = 1
+	submitted = 1;
+	
     const answerContainers = quizContainer.querySelectorAll(".answers");
+	n = myQuestions.length;
+	explanation = myQuestions[n-1].explanation;
+	explanationContainer.innerHTML = `${explanation}`;
 
     // keep track of user's answers
     let numCorrect = 0;
@@ -98,6 +105,12 @@ function main() {
     slides[currentSlide].classList.remove("active-slide");
     slides[n].classList.add("active-slide");
     currentSlide = n;
+ 	if (submitted == 0) {
+		explanationContainer.innerHTML = "";
+	} else {
+		explanation = myQuestions[n].explanation;
+		explanationContainer.innerHTML = `${explanation}`;
+	}
     
     if (currentSlide === 0) {
       previousButton.style.display = "none";
@@ -129,6 +142,7 @@ function main() {
 
   const quizContainer = document.getElementById("quiz");
   const resultsContainer = document.getElementById("results");
+  const explanationContainer = document.getElementById("explanation");
   const submitButton = document.getElementById("submit");
 
 	
