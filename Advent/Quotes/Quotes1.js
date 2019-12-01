@@ -8,7 +8,7 @@ function main() {
         c: "S&oslash;ren Kierkegaard"
       },
       correctAnswer: "a",
-	  explanation: "Correct answer: a"
+	  explanation: "<a href=\"https://www.irishpost.com/news/john-f-kennedy-quotes-168652\">Correct answer</a>: a"
     },
     {
       question: "To break the rules, you first have to master them.",
