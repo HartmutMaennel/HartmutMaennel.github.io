@@ -1,32 +1,5 @@
 function main() {
   const myQuestions = [
-    {
-      question: "To break the rules, you first have to master them.",
-      answers: {
-        a: "Dmitri Dmitrijewitsch Schostakowitsch (composer)",
-        b: "Audemars Piguet (Watches / Jewellery)",
-        c: "Nikola Tesla (Inventor)" 
-      },
-      correctAnswer: "b"
-    },
-	{
-      question: "Every accomplishment starts with the decision to try.",
-	  answers: {
-        a: "John F. Kennedy",
-        b: "Adidas",
-        c: "Harvard University"
-      },
-      correctAnswer: "a"
-    },
-    {
-      question: "Reach out and touch someone.",
-      answers: {
-        a: "Mahatma Gandhi",
-        b: "AT&T",
-        c: "Mother Theresa" 
-      },
-      correctAnswer: "b"
-    },
 	{
       question: "I believe in standardizing automobiles. I do not believe in standardizing human beings.",
       answers: {
@@ -75,11 +48,11 @@ function main() {
 	{
       question: "Think small.",
       answers: {
-        a: "Volkswagen, 1959",
-        b: "Green Party, Germany 1982",
+        a: "Green Party, Germany 1982",
+        b: "Volkswagen, 1959",
         c: "Muhammad Yunus, Nobel Prize 2006"
       },
-      correctAnswer: "a"
+      correctAnswer: "b"
     },
     {
       question: "Rewrite history. Redefine the position.",
@@ -208,7 +181,7 @@ function main() {
         `<div class="slide">
            <div class="question"> ${currentQuestion.question} </div>
            <div class="answers"> ${answers.join("")} </div>
-         </div>`
+		 </div>`
       );
     });
 
@@ -218,7 +191,8 @@ function main() {
   
   function showResults() {
     // gather answer containers from our quiz
-
+    submitButton.style.display = "none";
+	submitted = 1
     const answerContainers = quizContainer.querySelectorAll(".answers");
 
     // keep track of user's answers
@@ -233,9 +207,8 @@ function main() {
       if (userAnswer === currentQuestion.correctAnswer) {
         // add to the number of correct answers
         numCorrect++;
-
         // color the answers green
-        answerContainers[questionNumber].style.color = "lightgreen";
+        answerContainers[questionNumber].style.color = "green";
       } else {
         // if answer is wrong or blank
         // color the answers red
@@ -260,7 +233,11 @@ function main() {
     
     if (currentSlide === slides.length - 1) {
       nextButton.style.display = "none";
-      submitButton.style.display = "inline-block";
+	  if (submitted == 0) {
+        submitButton.style.display = "inline-block";
+	  } else {
+	   submitButton.style.display = "none";
+	  }
     } else {
       nextButton.style.display = "inline-block";
       submitButton.style.display = "none";
@@ -279,15 +256,16 @@ function main() {
   const quizContainer = document.getElementById("quiz");
   const resultsContainer = document.getElementById("results");
   const submitButton = document.getElementById("submit");
-  
+
+	
   // display quiz right away
   buildQuiz();
-  
+
   const previousButton = document.getElementById("previous");
   const nextButton = document.getElementById("next");
   const slides = document.querySelectorAll(".slide");
   let currentSlide = 0;
-
+  let submitted = 0;
   showSlide(0);
   
   // on submit, show results
