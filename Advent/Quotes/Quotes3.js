@@ -1,34 +1,144 @@
 function main() {
   const myQuestions = [
-	{
-      question: "I believe in standardizing automobiles. I do not believe in standardizing human beings.",
+    {
+      question: "If you can dream it, you can do it.",
       answers: {
-        a: "Michel Foucault",
-        b: "Henry Ford",
-        c: "Albert Einstein" 
+        a: "Stanislav Grof",
+        b: "Walt Disney Company",
+        c: "Henry David Thoreau" 
       },
       correctAnswer: "c",
-	  explanation: "<a href=\"https://www.azquotes.com/quote/844415\">Correct answer</a>: c"
+	  explanation: "<a href=\"https://spinatmaedchen.com/2017/12/25/if-you-can-dream-it-you-can-do-it-zitat-walt-disney/\">Correct answer</a>: b"
     },
-	{
-      question: "Victory is paid for in sweat, courage, and preparation.",
+    {
+      question: "Don't be a Maybe",
       answers: {
-        a: "Winston Churchill",
-        b: "Nike",
-        c: "Robert Edward Lee" 
+        a: "Ernesto Che Guevara",
+        b: "Marlboro",
+        c: "Barack Obama"
       },
       correctAnswer: "b",
-	  explanation: "<a href=\"https://images.app.goo.gl/8hn5N9QLyCScqxWG7\">Correct answer</a>: b"
+	  explanation: "<a href=\"https://www.tobaccotactics.org/index.php/Be_Marlboro:_Targeting_the_World\'s_Biggest_Brand_at_Youth\">Correct answer</a>: b"
     },
 	{
-      question: "To Read Too Many Books is Harmful.",
+      question: "Think small.",
       answers: {
-        a: "Albert Einstein",
-        b: "MTV",
-        c: "Mao Zedong" 
+        a: "Green Party, Germany 1982",
+        b: "Volkswagen, 1959",
+        c: "Muhammad Yunus, Nobel Prize 2006"
+      },
+      correctAnswer: "b",
+	  explanation: "<a href=\"https://en.wikipedia.org/wiki/Think_Small\">Correct answer</a>: b"
+    },
+    {
+      question: "Rewrite history. Redefine the position.",
+      answers: {
+        a: "Ulysses S. Grant",
+        b: "Nike",
+        c: "Howard Zinn"
+      },
+      correctAnswer: "b",
+	  explanation: "<a href=\"\">Correct answer</a>:b "
+    },
+	{
+      question: "Small is beautiful.",
+      answers: {
+        a: "E. F. Schumacher",
+        b: "Morris Motor Company",
+        c: "Aristotele"
+      },
+      correctAnswer: "a",
+	  explanation: "<a href=\"\">Correct answer</a>: a"
+    },
+	{
+      question: "Everything flows.",
+      answers: {
+        a: "Jacques-Yves Cousteau",
+        b: "Pepsi",
+        c: "Heraclitus"
       },
       correctAnswer: "c",
-	  explanation: "<a href=\"https://blogs.transparent.com/chinese/chairman-maos-little-red-book/\">Correct answer</a>: c"
+	  explanation: "<a href=\"https://en.wikipedia.org/wiki/Heraclitus#Panta_rhei,_%22everything_flows%22\">Correct answer</a>: c"
+    },
+	{
+      question: "Ask for more.",
+      answers: {
+        a: "Michel Foucault",
+        b: "Pepsi",
+        c: "Ernesto Che Guevara"
+      },
+      correctAnswer: "b",
+	  explanation: "<a href=\"\">Correct answer</a>: b"
+    },
+	{
+      question: "I believe in redefining my impossible.",
+      answers: {
+        a: "Nikola Tesla",
+        b: "Nike",
+        c: "Elon Musk"
+      },
+      correctAnswer: "b",
+	  explanation: "<a href=\"\">Correct answer</a>: b"
+    },
+	{
+      question: "Unless you dream, you are not going to achieve anything.",
+      answers: {
+        a: "Richard Branson",
+        b: "Soichiro Honda",
+        c: "Karl Marx",
+      },
+      correctAnswer: "a",
+	  explanation: "<a href=\"\">Correct answer</a>: a"
+    },
+    {
+      question: "When something is important enough, you do it even if the odds are not in your favor.",
+      answers: {
+        a: "Mao Zedong",
+        b: "Nike",
+        c: "Elon Musk"
+      },
+      correctAnswer: "c",
+	  explanation: "<a href=\"\">Correct answer</a>: c"
+    },
+	{
+      question: "Tell me how you read and I'll tell you who you are.",
+      answers: {
+        a: "Thomas Jefferson",
+        b: "New York Times",
+        c: "Martin Heidegger"
+      },
+      correctAnswer: "c",
+	  explanation: "<a href=\"\">Correct answer</a>: c"
+    },
+	{
+      question: "The only one who can tell you \"You can't\" is you. And you don't have to listen.",
+      answers: {
+        a: "Friedrich Nietzsche",
+        b: "Nike",
+        c: "Thomas Alva Edison"
+      },
+      correctAnswer: "b",
+	  explanation: "<a href=\"\">Correct answer</a>: b"
+    },
+    {
+      question: "Be realistic: Demand the impossible!",
+	  answers: {
+        a: "Ernesto Che Guevara",
+        b: "Tesla Inc.",
+        c: "Herbert Marcuse"
+      },
+      correctAnswer: "a",
+	  explanation: "<a href=\"\">Correct answer</a>: a"
+    },	
+    {
+      question: "I think it is possible for ordinary people to choose to be extraordinary.",
+	  answers: {
+        a: "John F. Kennedy",
+        b: "Nike",
+        c: "Elon Musk"
+      },
+      correctAnswer: "c",
+	  explanation: "<a href=\"\">Correct answer</a>: c"
     }
   ];
   
