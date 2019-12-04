@@ -1,35 +1,105 @@
 function main() {
   const myQuestions = [
-    {
-      question: "Rewrite history. Redefine the position.",
+  	{
+      question: "Small is beautiful.",
       answers: {
-        a: "Ulysses S. Grant",
-        b: "Nike",
-        c: "Howard Zinn"
+        a: "E. F. Schumacher",
+        b: "Morris Motor Company",
+        c: "Aristotele"
       },
-      correctAnswer: "b",
-	  explanation: "<a href=\"https://minnesotareview.wordpress.com/2017/04/21/famous-american-corporations-vs-famous-american-authors/\">Correct answer</a>:b "
+      correctAnswer: "a",
+	  explanation: "<a href=\"\">Correct answer</a>: a"
     },
 	{
-      question: "You can, you should, and if you're brave enough to start, you will.",
+      question: "Everything flows.",
       answers: {
-        a: "Oliever Cromwell",
-        b: "Camel cigarettes",
-        c: "Stephen King"
+        a: "Heraclitus",
+        b: "Pepsi",
+        c: "Jacques-Yves Cousteau"
       },
-      correctAnswer: "c",
-	  explanation: "<a href=\"https://minnesotareview.wordpress.com/2017/04/21/famous-american-corporations-vs-famous-american-authors/\">Correct answer</a>:c "
+      correctAnswer: "a",
+	  explanation: "<a href=\"https://en.wikipedia.org/wiki/Heraclitus#Panta_rhei,_%22everything_flows%22\">Correct answer</a>: c"
     },
-    {
-      question: "Impossible is nothing.",
+	{
+      question: "Think small.",
       answers: {
-        a: "Plato",
-        b: "Adidas",
-        c: "Jeff Bezos"
+        a: "Green Party, Germany 1982",
+        b: "Volkswagen, 1959",
+        c: "Muhammad Yunus, Nobel Prize 2006"
       },
       correctAnswer: "b",
-	  explanation: "<a href=\"https://minnesotareview.wordpress.com/2017/04/21/famous-american-corporations-vs-famous-american-authors/\">Correct answer</a>:b "
+	  explanation: "<a href=\"https://en.wikipedia.org/wiki/Think_Small\">Correct answer</a>: b"
     },
+	{
+      question: "Ask for more.",
+      answers: {
+        a: "Michel Foucault",
+        b: "Pepsi",
+        c: "Ernesto Che Guevara"
+      },
+      correctAnswer: "b",
+	  explanation: "<a href=\"\">Correct answer</a>: b"
+    },
+	{
+      question: "I believe in redefining my impossible.",
+      answers: {
+        a: "Nikola Tesla",
+        b: "Nike",
+        c: "Elon Musk"
+      },
+      correctAnswer: "b",
+	  explanation: "<a href=\"\">Correct answer</a>: b"
+    },
+	{
+      question: "Unless you dream, you are not going to achieve anything.",
+      answers: {
+        a: "Richard Branson",
+        b: "Soichiro Honda",
+        c: "Karl Marx",
+      },
+      correctAnswer: "a",
+	  explanation: "<a href=\"\">Correct answer</a>: a"
+    },
+    {
+      question: "When something is important enough, you do it even if the odds are not in your favor.",
+      answers: {
+        a: "Mao Zedong",
+        b: "Nike",
+        c: "Elon Musk"
+      },
+      correctAnswer: "c",
+	  explanation: "<a href=\"\">Correct answer</a>: c"
+    },
+	{
+      question: "Tell me how you read and I'll tell you who you are.",
+      answers: {
+        a: "Thomas Jefferson",
+        b: "New York Times",
+        c: "Martin Heidegger"
+      },
+      correctAnswer: "c",
+	  explanation: "<a href=\"\">Correct answer</a>: c"
+    },
+	{
+      question: "The only one who can tell you \"You can't\" is you. And you don't have to listen.",
+      answers: {
+        a: "Friedrich Nietzsche",
+        b: "Nike",
+        c: "Thomas Alva Edison"
+      },
+      correctAnswer: "b",
+	  explanation: "<a href=\"\">Correct answer</a>: b"
+    },
+    {
+      question: "I think it is possible for ordinary people to choose to be extraordinary.",
+	  answers: {
+        a: "John F. Kennedy",
+        b: "Nike",
+        c: "Elon Musk"
+      },
+      correctAnswer: "c",
+	  explanation: "<a href=\"\">Correct answer</a>: c"
+    }
   ];
   
   function buildQuiz() {
