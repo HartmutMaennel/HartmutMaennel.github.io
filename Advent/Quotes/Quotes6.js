@@ -1,35 +1,75 @@
 function main() {
   const myQuestions = [
-  	{
-      question: "Small is beautiful.",
-      answers: {
-        a: "Aristotele",
-        b: "Morris Motor Company",
-        c: "E. F. Schumacher"
-      },
-      correctAnswer: "c",
-	  explanation: "<a href=\"https://en.wikipedia.org/wiki/Small_Is_Beautiful\">Correct answer</a>: c"
-    },
 	{
-      question: "Everything flows.",
+      question: "Ask for more.",
       answers: {
-        a: "Heraclitus",
+        a: "Michel Foucault",
         b: "Pepsi",
-        c: "Jacques-Yves Cousteau"
-      },
-      correctAnswer: "a",
-	  explanation: "<a href=\"https://en.wikipedia.org/wiki/Heraclitus#Panta_rhei,_%22everything_flows%22\">Correct answer</a>: a"
-    },
-	{
-      question: "Think small.",
-      answers: {
-        a: "Green Party, Germany 1982",
-        b: "Volkswagen, 1959",
-        c: "Muhammad Yunus, Nobel Prize 2006"
+        c: "Ernesto Che Guevara"
       },
       correctAnswer: "b",
-	  explanation: "<a href=\"https://en.wikipedia.org/wiki/Think_Small\">Correct answer</a>: b"
+	  explanation: "<a href=\"\">Correct answer</a>: b"
     },
+	{
+      question: "I believe in redefining my impossible.",
+      answers: {
+        a: "Nikola Tesla",
+        b: "Nike",
+        c: "Elon Musk"
+      },
+      correctAnswer: "b",
+	  explanation: "<a href=\"\">Correct answer</a>: b"
+    },
+	{
+      question: "Unless you dream, you are not going to achieve anything.",
+      answers: {
+        a: "Richard Branson",
+        b: "Soichiro Honda",
+        c: "Karl Marx",
+      },
+      correctAnswer: "a",
+	  explanation: "<a href=\"\">Correct answer</a>: a"
+    },
+    {
+      question: "When something is important enough, you do it even if the odds are not in your favor.",
+      answers: {
+        a: "Mao Zedong",
+        b: "Nike",
+        c: "Elon Musk"
+      },
+      correctAnswer: "c",
+	  explanation: "<a href=\"\">Correct answer</a>: c"
+    },
+	{
+      question: "Tell me how you read and I'll tell you who you are.",
+      answers: {
+        a: "Thomas Jefferson",
+        b: "New York Times",
+        c: "Martin Heidegger"
+      },
+      correctAnswer: "c",
+	  explanation: "<a href=\"\">Correct answer</a>: c"
+    },
+	{
+      question: "The only one who can tell you \"You can't\" is you. And you don't have to listen.",
+      answers: {
+        a: "Friedrich Nietzsche",
+        b: "Nike",
+        c: "Thomas Alva Edison"
+      },
+      correctAnswer: "b",
+	  explanation: "<a href=\"\">Correct answer</a>: b"
+    },
+    {
+      question: "I think it is possible for ordinary people to choose to be extraordinary.",
+	  answers: {
+        a: "John F. Kennedy",
+        b: "Nike",
+        c: "Elon Musk"
+      },
+      correctAnswer: "c",
+	  explanation: "<a href=\"\">Correct answer</a>: c"
+    }
   ];
   
   function buildQuiz() {
