@@ -1,0 +1,286 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<meta charset="utf-8"> 
+	<title>Guessing Game</title> 
+
+	<style> 
+		html { 
+	font-family: sans-serif; 
+	} 
+	
+    body { 
+	width: 50%; 
+	max-width: 800px; 
+	min-width: 480px; 
+	margin: 0 auto; 
+	} 
+    .properties {
+	  margin-bottom: 20px;
+	  text-align: left;
+	  display: inline-block;
+	}
+	.properties label{
+	  display: block;
+	  margin-bottom: 10px;
+	}
+	</style> 
+</head> 
+
+<body> 
+<h1>Guess The Ring</h1> 
+
+<p>We have selected a random commutative ring with 1.<br/>
+ You can ask about 5 properties, see whether you can then guess the ring.</p> 
+<p>You can ask about the following properties:<br/>
+<div id="quiz" class="properties"> 
+	<label><input type="radio" name="property" value="1" >Reduced</label>
+	<label><input type="radio" name="property" value="2" >Integral Domain</label>
+	<label><input type="radio" name="property" value="3" >Unique Factorization Domain</label>
+	<label><input type="radio" name="property" value="4" >Dedekind</label>
+	<label><input type="radio" name="property" value="5" >Principal Ideal Domain</label>
+	<label><input type="radio" name="property" value="6" >Field</label>
+	<label><input type="radio" name="property" value="7" >Characteristic</label>
+	<label><input type="radio" name="property" value="8" >Cardinality</label>
+	<label><input type="radio" name="property" value="9" >Local Ring</label>
+	<label><input type="radio" name="property" value="10" >Discrete Valuation Ring</label>
+	<label><input type="radio" name="property" value="11" >Regular Local Ring</label>
+	<label><input type="radio" name="property" value="12" >Noetherian</label>
+	<label><input type="radio" name="property" value="13" >Artinian</label>
+</div>
+</p>
+
+<div class="form"> 
+	<input type = "submit" value = "Submit question"
+		class = "guessSubmit" id = "submitguess"/> 
+	<br/>
+	<label id="answers"></label>
+	<br/>
+	<br/>
+    <label id="desc"></label>
+	<br/>	
+    <label id="guess_was" style="display:none"/>
+	   <a href="Samichlaus.html">Guessed correctly</a> 
+	   &nbsp;&nbsp;
+	   <a href="Schmutzli.html">Did not guess correctly</a> 
+	</label>
+</div> 
+
+
+
+<script type = "text/javascript"> 
+    var n_questions = 5;
+    var properties = [
+ 	 "Reduced", "Integral", "Unique Factorization Domain", "Dedekind",
+	 "Principal Ideal Domain", "Field", "Characteristic", "Cardinality", "Local Ring",
+	 "Discrete Valuation Ring", "Regular Local Ring", "Noetherian", "Artinian"];
+	var ringZ = {"Name": "Z (the ring of integers)",
+	             "Reduced": true,
+				 "Integral": true, 
+				 "Unique Factorization Domain": true, 
+				 "Dedekind": true,
+				 "Principal Ideal Domain": true, 
+				 "Field": false, 
+				 "Characteristic": "0", 
+				 "Cardinality": "infinite (countable)",
+				 "Local Ring": false,
+	             "Discrete Valuation Ring": false, 
+				 "Regular Local Ring": false, 
+				 "Noetherian": true, 
+				 "Artinian": false,
+				 "description": "<a href=\"RingZ.html\"> Details </a>"
+	};
+	var F4 = {"Name": "F4 (the field with 4 elements)",
+	             "Reduced": true,
+				 "Integral": true, 
+				 "Unique Factorization Domain": true, 
+				 "Dedekind": true,
+				 "Principal Ideal Domain": true, 
+				 "Field": true, 
+				 "Characteristic": "2", 
+				 "Cardinality": "4",
+				 "Local Ring": true,
+	             "Discrete Valuation Ring": false, 
+				 "Regular Local Ring": true, 
+				 "Noetherian": true, 
+				 "Artinian": true,
+				 "description": "<a href=\"F4.html\"> Details </a>"
+	};
+    var Z6 = {"Name": "Z/6 (Integers modulo 6)",
+	             "Reduced": true,
+				 "Integral": false, 
+				 "Unique Factorization Domain": false, 
+				 "Dedekind": false,
+				 "Principal Ideal Domain": false, 
+				 "Field": false, 
+				 "Characteristic": "6", 
+				 "Cardinality": "6",
+				 "Local Ring": false,
+	             "Discrete Valuation Ring": false, 
+				 "Regular Local Ring": false, 
+				 "Noetherian": true, 
+				 "Artinian": true,
+				 "description": "<a href=\"Z6.html\"> Details </a>"
+	};
+	var FX = {"Name": "F[X] (Polynomials in one variable over a field)",
+	             "Reduced": true,
+				 "Integral": true, 
+				 "Unique Factorization Domain": true, 
+				 "Dedekind": true,
+				 "Principal Ideal Domain": true, 
+				 "Field": false, 
+				 "Characteristic": "No comment", 
+				 "Cardinality": "Infinite",
+				 "Local Ring": false,
+	             "Discrete Valuation Ring": false, 
+				 "Regular Local Ring": false, 
+				 "Noetherian": true, 
+				 "Artinian": false,
+				 "description": "<a href=\"FX.html\"> Details </a>"
+	};
+    var FXY = {"Name": "F[X,Y] (Polynomials in two variable over a field)",
+	             "Reduced": true,
+				 "Integral": true, 
+				 "Unique Factorization Domain": true, 
+				 "Dedekind": false,
+				 "Principal Ideal Domain": false, 
+				 "Field": false, 
+				 "Characteristic": "No comment", 
+				 "Cardinality": "Infinite",
+				 "Local Ring": false,
+	             "Discrete Valuation Ring": false, 
+				 "Regular Local Ring": false, 
+				 "Noetherian": true, 
+				 "Artinian": false,
+				 "description": "<a href=\"FXY.html\"> Details </a>"
+	};
+	var FXYmodXY = {"Name": "F[X,Y] / (XY)",
+	             "Reduced": true,
+				 "Integral": false, 
+				 "Unique Factorization Domain": false, 
+				 "Dedekind": false,
+				 "Principal Ideal Domain": false, 
+				 "Field": false, 
+				 "Characteristic": "No comment", 
+				 "Cardinality": "Infinite",
+				 "Local Ring": false,
+	             "Discrete Valuation Ring": false, 
+				 "Regular Local Ring": false, 
+				 "Noetherian": true, 
+				 "Artinian": false,
+				 "description": "<a href=\"FXYmodXY.html\"> Details </a>"
+	};
+	var AlgIntegers = {"Name": "All algebraic integers",
+	             "Reduced": true,
+				 "Integral": true, 
+				 "Unique Factorization Domain": false, 
+				 "Dedekind": false,
+				 "Principal Ideal Domain": false, 
+				 "Field": false, 
+				 "Characteristic": "0", 
+				 "Cardinality": "Infinite",
+				 "Local Ring": false,
+	             "Discrete Valuation Ring": false, 
+				 "Regular Local Ring": false, 
+				 "Noetherian": false, 
+				 "Artinian": false,
+				 "description": "<a href=\"AlgIntegers.html\"> Details </a>"
+	};
+	var PowerSeries = {"Name": "F[[X]]: Formal Power Series over a field F",
+	             "Reduced": true,
+				 "Integral": true, 
+				 "Unique Factorization Domain": true, 
+				 "Dedekind": true,
+				 "Principal Ideal Domain": true, 
+				 "Field": false, 
+				 "Characteristic": "No comment", 
+				 "Cardinality": "Infinite",
+				 "Local Ring": true,
+	             "Discrete Valuation Ring": true, 
+				 "Regular Local Ring": true, 
+				 "Noetherian": true, 
+				 "Artinian": false,
+				 "description": "<a href=\"PowerSeries.html\"> Details </a>"
+	};
+    var PowerSeries2 = {"Name": "F[[X,Y]]: Formal Power Series in 2 variables over a field F",
+	             "Reduced": true,
+				 "Integral": true, 
+				 "Unique Factorization Domain": true, 
+				 "Dedekind": false,
+				 "Principal Ideal Domain": false, 
+				 "Field": false, 
+				 "Characteristic": "No comment", 
+				 "Cardinality": "Infinite",
+				 "Local Ring": true,
+	             "Discrete Valuation Ring": false, 
+				 "Regular Local Ring": true, 
+				 "Noetherian": true, 
+				 "Artinian": false,
+				 "description": "<a href=\"PowerSeries2.html\"> Details </a>"
+	};
+	var DualNumbers = {"Name": "F[X]/(X^2) for a field F",
+	             "Reduced": false,
+				 "Integral": false, 
+				 "Unique Factorization Domain": false, 
+				 "Dedekind": false,
+				 "Principal Ideal Domain": false, 
+				 "Field": false, 
+				 "Characteristic": "No comment", 
+				 "Cardinality": "No comment",
+				 "Local Ring": true,
+	             "Discrete Valuation Ring": false, 
+				 "Regular Local Ring": false, 
+				 "Noetherian": true, 
+				 "Artinian": true,
+				 "description": "<a href=\"DualNumbers.html\"> Details </a>"
+	};
+	
+	schemes = [ringZ, F4, Z6, FX, FXY, FXYmodXY, AlgIntegers, PowerSeries, PowerSeries2, DualNumbers];
+	
+    var n_schemes = 10; 
+	var scheme = schemes[Math.floor(Math.random() * n_schemes)];
+
+	var guess = 1; 
+	var answers = "";
+
+	document.getElementById("submitguess").onclick = function(){
+	  if (guess <= n_questions) {
+		  const quizContainer = document.getElementById("quiz");
+		  const selector = "input:checked";
+		  const userAnswer = (quizContainer.querySelector(selector) || {}).value;
+			var x = userAnswer -1; 
+			prop = properties[x];
+			if (typeof(scheme[prop]) === 'string') {
+			  answers += "<br/><br/>" + properties[x] + ": " + scheme[prop];
+			} else if (scheme[prop] == false) {
+			  answers += "<br/><br/>" + properties[x] + ": No.";
+			} else {
+			  answers += "<br/><br/>" + properties[x] + ": Yes.";
+			}
+			label_answers = document.getElementById("answers");
+			label_answers.innerHTML = answers;
+			if (guess == n_questions) {
+			  button = document.getElementById("submitguess");
+			  button.value = "Show Ring";
+			  
+			  // alert("Ok... do you know the scheme?");
+			  // alert("It was " + scheme["Name"]);
+			}
+			guess++;
+	  } else if (guess == n_questions+1) {
+		 label_desc = document.getElementById("desc");
+		 label_desc.innerHTML = scheme["description"];
+		 answers += "<br/><br/>It was " + scheme["Name"] + ".";
+		 label_answers = document.getElementById("answers");
+		 label_answers.innerHTML = answers;
+		 button = document.getElementById("submitguess");
+	     button.style.display = "none";
+		 reward = document.getElementById("guess_was");
+		 reward.style.display = "inline";
+
+	  }
+    } 
+	
+</script> 
+</body> 
+</html>					 
