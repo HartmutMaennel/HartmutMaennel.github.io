@@ -1,16 +1,6 @@
 function main() {
   const myQuestions = [
 	{
-      question: "Ask for more.",
-      answers: {
-        a: "Michel Foucault",
-        b: "Pepsi",
-        c: "Ernesto Che Guevara"
-      },
-      correctAnswer: "b",
-	  explanation: "<a href=\"\">Correct answer</a>: b"
-    },
-	{
       question: "I believe in redefining my impossible.",
       answers: {
         a: "Nikola Tesla",
@@ -20,16 +10,7 @@ function main() {
       correctAnswer: "b",
 	  explanation: "<a href=\"\">Correct answer</a>: b"
     },
-	{
-      question: "Unless you dream, you are not going to achieve anything.",
-      answers: {
-        a: "Richard Branson",
-        b: "Soichiro Honda",
-        c: "Karl Marx",
-      },
-      correctAnswer: "a",
-	  explanation: "<a href=\"\">Correct answer</a>: a"
-    },
+
     {
       question: "When something is important enough, you do it even if the odds are not in your favor.",
       answers: {
@@ -60,16 +41,6 @@ function main() {
       correctAnswer: "b",
 	  explanation: "<a href=\"\">Correct answer</a>: b"
     },
-    {
-      question: "I think it is possible for ordinary people to choose to be extraordinary.",
-	  answers: {
-        a: "John F. Kennedy",
-        b: "Nike",
-        c: "Elon Musk"
-      },
-      correctAnswer: "c",
-	  explanation: "<a href=\"\">Correct answer</a>: c"
-    }
   ];
   
   function buildQuiz() {
