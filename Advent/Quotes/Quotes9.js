@@ -1,35 +1,58 @@
 function main() {
   const myQuestions = [
 	{
-      question: "All men by nature desire to know.",
+      question: "I believe in redefining my impossible.",
       answers: {
-        a: "Aristotele",
-        b: "Encyclopedia Britannica",
-        c: "Abraham Lincoln"
-      },
-      correctAnswer: "a",
-	  explanation: "<a href=\"https://classicalwisdom.com/greek_books/metaphysics-by-aristotle-book-i/\">Correct answer</a>: a"
-    },
-	{
-      question: "The only one who can tell you \"You can't\" is you. And you don't have to listen.",
-      answers: {
-        a: "Friedrich Nietzsche",
+        a: "Nikola Tesla",
         b: "Nike",
-        c: "Thomas Alva Edison"
+        c: "Elon Musk"
       },
       correctAnswer: "b",
-	  explanation: "<a href=\"https://daringtolivefully.com/nike-quotes-and-videos\">Correct answer</a>: b"
+	  explanation: "<a href=\"\">Correct answer</a>: b"
     },
+
     {
-      question: "The best life is the one in which the creative impulses play the largest part and the possessive impulses the smallest.",
+      question: "When something is important enough, you do it even if the odds are not in your favor.",
       answers: {
-        a: "Plato",
-        b: "UBS Impact Hub",
-        c: "Bertrand Russell"
+        a: "Mao Zedong",
+        b: "Nike",
+        c: "Elon Musk"
       },
       correctAnswer: "c",
-	  explanation: "<a href=\"https://books.google.ch/books?id=arct6OpfXJ0C&pg=PA133&lpg=PA133&dq=The+best+life+is+the+one+in+which+the+creative+impulses+play+the+largest+part+and+the+possessive+impulses+the+smallest.&source=bl&ots=ffiKTZPpSE&sig=ACfU3U37cACyIkguipXbWikATzRb-BvMRA&hl=en&sa=X&ved=2ahUKEwj6q7z51aTmAhVBwcQBHaIXB8UQ6AEwBnoECA4QAQ#v=onepage&q=The%20best%20life%20is%20the%20one%20in%20which%20the%20creative%20impulses%20play%20the%20largest%20part%20and%20the%20possessive%20impulses%20the%20smallest.&f=false\">Correct answer</a>: c"
+	  explanation: "<a href=\"\">Correct answer</a>: c"
     },
+	{
+      question: "Tell me how you read and I'll tell you who you are.",
+      answers: {
+        a: "Thomas Jefferson",
+        b: "New York Times",
+        c: "Martin Heidegger"
+      },
+      correctAnswer: "c",
+	  explanation: "<a href=\"\">Correct answer</a>: c"
+    },
+    {
+      question: "The Problem with Quotes On The Internet is That They are Often not true.",
+      answers: {
+        a: "Abraham Lincoln",
+        b: "Guiness Book of Records",
+        c: "Tim Berners-Lee"
+      },
+      correctAnswer: "a",
+	  explanation: "<a href=\"https://www.amazon.com/Lincoln-Internet-Poster-24x36-PSA011280/dp/B078KPFNF6\">Correct answer</a>: c"
+    },
+	
+	Be All You Can Be  
+	https://en.wikipedia.org/wiki/Slogans_of_the_United_States_Army
+	
+	It is. Are you?
+	Independent
+	https://www.creativereview.co.uk/it-is-are-you-slogan/
+	
+	Think different.
+	https://en.wikipedia.org/wiki/Think_different
+	Apple
+	
   ];
   
   function buildQuiz() {
