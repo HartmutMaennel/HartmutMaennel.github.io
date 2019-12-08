@@ -1,35 +1,56 @@
 function main() {
   const myQuestions = [
-  	{
-      question: "Be All You Can Be.",
-      answers: {
-        a: "Seneca the Younger",
-        b: "Nike",
-        c: "United States Army"
-      },
-      correctAnswer: "c",
-	  explanation: "<a href=\"https://en.wikipedia.org/wiki/Slogans_of_the_United_States_Army\">Correct answer</a>: c"
-    },
 	{
-      question: "The mind is not a vessel to be filled, but a fire to be kindled.",
+      question: "I believe in redefining my impossible.",
       answers: {
-        a: "Plutarch",
-        b: "Amazon",
-        c: "Jean-Paul Sartre"
-      },
-      correctAnswer: "a",
-	  explanation: "<a href=\"https://en.wikiversity.org/wiki/Talk:Plutarch_quote\">Correct answer</a>: a"
-    },
-    {
-      question: "Think different.",
-      answers: {
-        a: "Laozi",
-        b: "Apple",
-        c: "Jean-Jacques Rousseau"
+        a: "Nikola Tesla",
+        b: "Nike",
+        c: "Elon Musk"
       },
       correctAnswer: "b",
-	  explanation: "<a href=\"https://en.wikipedia.org/wiki/Think_different\">Correct answer</a>: b"
-    }	
+	  explanation: "<a href=\"\">Correct answer</a>: b"
+    },
+
+    {
+      question: "When something is important enough, you do it even if the odds are not in your favor.",
+      answers: {
+        a: "Mao Zedong",
+        b: "Nike",
+        c: "Elon Musk"
+      },
+      correctAnswer: "c",
+	  explanation: "<a href=\"\">Correct answer</a>: c"
+    },
+	{
+      question: "Tell me how you read and I'll tell you who you are.",
+      answers: {
+        a: "Thomas Jefferson",
+        b: "New York Times",
+        c: "Martin Heidegger"
+      },
+      correctAnswer: "c",
+	  explanation: "<a href=\"\">Correct answer</a>: c"
+    },
+    {
+      question: "The Problem with Quotes On The Internet is That They are Often not true.",
+      answers: {
+        a: "Abraham Lincoln",
+        b: "Guiness Book of Records",
+        c: "Tim Berners-Lee"
+      },
+      correctAnswer: "a",
+	  explanation: "<a href=\"https://www.amazon.com/Lincoln-Internet-Poster-24x36-PSA011280/dp/B078KPFNF6\">Correct answer</a>: a"
+    },
+    {
+      question: "It is. Are you?",
+      answers: {
+        a: "Abraham Lincoln",
+        b: "The Independent",
+        c: "Tim Berners-Lee"
+      },
+      correctAnswer: "b",
+	  explanation: "<a href=\"https://www.creativereview.co.uk/it-is-are-you-slogan/\">Correct answer</a>: b"
+    },	
   ];
   
   function buildQuiz() {
