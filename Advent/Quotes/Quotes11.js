@@ -1,36 +1,58 @@
 function main() {
   const myQuestions = [
 	{
-      question: "You can't fight a storm. Embrace it.",
+      question: "Tell me how you read and I'll tell you who you are.",
       answers: {
-        a: "William Shakespeare",
-        b: "Diesel",
-        c: "Mao Zedong"
-      },
-      correctAnswer: "b",
-	  explanation: "<a href=\"https://www.adsoftheworld.com/media/outdoor/diesel_embrace_it\">Correct answer</a>: b"
-    },
-
-    {
-      question: "When something is important enough, you do it even if the odds are not in your favor.",
-      answers: {
-        a: "Vladimir Lenin",
-        b: "Y Combinator",
-        c: "Elon Musk"
+        a: "Thomas Jefferson",
+        b: "New York Times",
+        c: "Martin Heidegger"
       },
       correctAnswer: "c",
-	  explanation: "<a href=\"https://www.cbsnews.com/news/us-china-russia-elon-musk-entrepreneurs-insane-vision-becomes-reality\">Correct answer</a>: c"
+	  explanation: "<a href=\"\">Correct answer</a>: c"
     },
-	{
-      question: "One Moment can change the game.",
+    {
+      question: "It is. Are you?",
       answers: {
-        a: "Honinbo Shusaku",
-        b: "VISA",
-        c: "Yogi Berra"
+        a: "Abraham Lincoln",
+        b: "The Independent",
+        c: "Tim Berners-Lee"
       },
       correctAnswer: "b",
-	  explanation: "<a href=\"http://saatchi.co.uk/en-gb/work/visa-sponsorship-of-fifa-womens-world-cup-france-one-moment-can-change-the-game\">Correct answer</a>: b"
-    }
+	  explanation: "<a href=\"https://www.creativereview.co.uk/it-is-are-you-slogan/\">Correct answer</a>: b"
+    },	
+   {
+      question: "I believe in redefining my impossible.",
+      answers: {
+        a: "Nikola Tesla",
+        b: "Nike",
+        c: "Elon Musk"
+      },
+      correctAnswer: "b",
+	  explanation: "<a href=\"\">Correct answer</a>: b"
+    },
+	# Complaining is not a strategy, Jeff Bezos
+	# Thank you for making this day necessary.  Yogi Berra
+	
+    {
+      question: "Life is really simple, but we insist on making it complicated.",
+      answers: {
+        a: "Confucius",
+        b: "American Express",
+        c: "Henry David Thoreau"
+      },
+      correctAnswer: "a",
+	  explanation: "<a href=\"https://en.wikiquote.org/wiki/Confucius#Misattributed\">Correct answer</a>: a"
+    },
+	{
+      question: "The Problem with Quotes On The Internet is That They are Often not true.",
+      answers: {
+        a: "Abraham Lincoln",
+        b: "Guiness Book of Records",
+        c: "Tim Berners-Lee"
+      },
+      correctAnswer: "a",
+	  explanation: "<a href=\"https://www.amazon.com/Lincoln-Internet-Poster-24x36-PSA011280/dp/B078KPFNF6\">Correct answer</a>: a"
+    },
   ];
   
   function buildQuiz() {
