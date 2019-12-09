@@ -1,5 +1,15 @@
 function main() {
   const myQuestions = [
+  	{
+      question: "China gave the world tea. Yorkshire made it proper.",
+      answers: {
+        a: "Oscar Wilde",
+        b: "HSBC",
+        c: "Boris Johnson"
+      },
+      correctAnswer: "b",
+	  explanation: "<a href=\"https://www.thedrum.com/creative-works/project/wunderman-thompson-hsbc-we-are-not-island\">Correct answer</a>: b"
+    },
 	{
       question: "Tell me how you read and I'll tell you who you are.",
       answers: {
@@ -33,6 +43,17 @@ function main() {
 	# Complaining is not a strategy, Jeff Bezos
 	# Thank you for making this day necessary.  Yogi Berra
 	
+	
+	{
+	  question: "Be Yourself. Everyone Else Is Already Taken.",
+      answers: {
+        a: "Oscar Wilde",
+        b: "Zalando",
+        c: "Frank Zappa"
+      },
+      correctAnswer: "a",
+	  explanation: "<a href=\"https://en.wikiquote.org/wiki/Confucius#Misattributed\">Correct answer</a>: a"
+    },
     {
       question: "Life is really simple, but we insist on making it complicated.",
       answers: {
