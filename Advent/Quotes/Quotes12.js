@@ -1,5 +1,49 @@
 function main() {
   const myQuestions = [
+  	{
+      question: "China gave the world tea. Yorkshire made it proper.",
+      answers: {
+        a: "Oscar Wilde",
+        b: "HSBC",
+        c: "Boris Johnson"
+      },
+      correctAnswer: "b",
+	  explanation: "<a href=\"https://www.thedrum.com/creative-works/project/wunderman-thompson-hsbc-we-are-not-island\">Correct answer</a>: b"
+    },
+	{
+      question: "Tell me how you read and I'll tell you who you are.",
+      answers: {
+        a: "Thomas Jefferson",
+        b: "New York Times",
+        c: "Martin Heidegger"
+      },
+      correctAnswer: "c",
+	  explanation: "<a href=\"\">Correct answer</a>: c"
+    },
+    {
+      question: "It is. Are you?",
+      answers: {
+        a: "Abraham Lincoln",
+        b: "The Independent",
+        c: "Tim Berners-Lee"
+      },
+      correctAnswer: "b",
+	  explanation: "<a href=\"https://www.creativereview.co.uk/it-is-are-you-slogan/\">Correct answer</a>: b"
+    },	
+   {
+      question: "I believe in redefining my impossible.",
+      answers: {
+        a: "Nikola Tesla",
+        b: "Nike",
+        c: "Elon Musk"
+      },
+      correctAnswer: "b",
+	  explanation: "<a href=\"\">Correct answer</a>: b"
+    },
+	# Complaining is not a strategy, Jeff Bezos
+	# Thank you for making this day necessary.  Yogi Berra
+	
+	
 	{
 	  question: "Be Yourself. Everyone Else Is Already Taken.",
       answers: {
@@ -8,7 +52,7 @@ function main() {
         c: "Frank Zappa"
       },
       correctAnswer: "a",
-	  explanation: "<a href=\"https://quoteinvestigator.com/2014/01/20/be-yourself/\">Correct answer</a>: a"
+	  explanation: "<a href=\"https://en.wikiquote.org/wiki/Confucius#Misattributed\">Correct answer</a>: a"
     },
     {
       question: "Life is really simple, but we insist on making it complicated.",
@@ -21,7 +65,7 @@ function main() {
 	  explanation: "<a href=\"https://en.wikiquote.org/wiki/Confucius#Misattributed\">Correct answer</a>: a"
     },
 	{
-      question: "The Problem with Quotes Found on the Internet is That They are Often not true.",
+      question: "The Problem with Quotes On The Internet is That They are Often not true.",
       answers: {
         a: "Abraham Lincoln",
         b: "Guiness Book of Records",
