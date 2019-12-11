@@ -1,35 +1,39 @@
 function main() {
   const myQuestions = [
-  	{
-      question: "China gave the world tea. Yorkshire made it proper.",
+ 	{
+      question: "I am extraordinarily patient, provided I get my own way in the end.",
       answers: {
-        a: "Oscar Wilde",
-        b: "HSBC",
-        c: "Boris Johnson"
+        a: "Konrad Adenauer",
+        b: "Zalando",
+        c: "Margaret Thatcher"
+      },
+      correctAnswer: "c",
+	  explanation: "<a href=\"\">Correct answer</a>: c"
+    },
+    {
+      question: "It is. Are you?",
+      answers: {
+        a: "Abraham Lincoln",
+        b: "The Independent",
+        c: "Tim Berners-Lee"
       },
       correctAnswer: "b",
-	  explanation: "<a href=\"https://www.thedrum.com/creative-works/project/wunderman-thompson-hsbc-we-are-not-island\">Correct answer</a>: b"
-    },
-	{
-      question: "First movers will always change the world. But which one?",
+	  explanation: "<a href=\"https://www.creativereview.co.uk/it-is-are-you-slogan/\">Correct answer</a>: b"
+    },	
+
+
+   {
+      question: "I believe in redefining my impossible.",
       answers: {
-        a: "Deepak Chopra",
-        b: "Julius B&auml;r Private Bank",
-        c: "Umberto Eco"
-      },
-      correctAnswer: "b",
-	  explanation: "<a href=\"https://www.seilers-werbeblog.ch/julius-baer-spektakulaerer-tv-spot-von-marc-forster/\">Correct answer</a>: b"
-    },
-	{
-      question: "Mastering others is strength; mastering yourself is true power.",
-      answers: {
-        a: "老子",
+        a: "Nikola Tesla",
         b: "Nike",
-        c: "Georg Wilhelm Friedrich Hegel"
+        c: "Elon Musk"
       },
-      correctAnswer: "a",
-	  explanation: "<a href=\"https://en.wikiquote.org/wiki/Laozi\">Correct answer</a>: a"
-    }	
+      correctAnswer: "b",
+	  explanation: "<a href=\"\">Correct answer</a>: b"
+    },
+	# Complaining is not a strategy, Jeff Bezos
+	# Thank you for making this day necessary.  Yogi Berra
   ];
   
   function buildQuiz() {
