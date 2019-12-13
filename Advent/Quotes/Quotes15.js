@@ -1,35 +1,7 @@
 function main() {
   const myQuestions = [
-  	{
-      question: "Anxiety is the dizziness of freedom.",
-      answers: {
-        a: "S&oslash;ren Kierkegaard",
-        b: "Visa",
-        c: "Jacques Derrida"
-      },
-      correctAnswer: "a",
-	  explanation: "<a href=\"https://en.wikipedia.org/wiki/The_Concept_of_Anxiety\">Correct answer</a>: a"
-    },
-	{
-	question: "It all depends on how we look at things, and not how they are in themselves.",
-      answers: {
-        a: "Plato",
-        b: "Ogilvy & Mather's",
-        c: "Carl Jung"
-      },
-      correctAnswer: "c",
-	  explanation: "<a href=\"https://books.google.ch/books?id=U6lMnx8AQsYC&pg=PA67&lpg=PA67&dq=It+all+depends+on+how+we+look+at+things,+and+not+how+they+are+in+themselves.&source=bl&ots=dkRv017F5R&sig=ACfU3U14l_cpKJTZAPPJQJSGWsQ6I8LkBg&hl=en&sa=X&ved=2ahUKEwiSn6S3zLPmAhW7zMQBHS-dDBsQ6AEwD3oECAoQAQ#v=onepage&q=It%20all%20depends%20on%20how%20we%20look%20at%20things%2C%20and%20not%20how%20they%20are%20in%20themselves.&f=false\">Correct answer</a>: c"
-    },	
-	{
-      question: "It is. Are you?",
-      answers: {
-        a: "Sigmund Freud",
-        b: "The Independent",
-        c: "Konrad Lorenz"
-      },
-      correctAnswer: "b",
-	  explanation: "<a href=\"https://www.creativereview.co.uk/it-is-are-you-slogan/\">Correct answer</a>: b"
-    },	
+	# Complaining is not a strategy, Jeff Bezos
+	# Thank you for making this day necessary.  Yogi Berra
   ];
   
   function buildQuiz() {
