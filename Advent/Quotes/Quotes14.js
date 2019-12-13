@@ -1,35 +1,17 @@
 function main() {
   const myQuestions = [
- 	{
-      question: "I am extraordinarily patient, provided I get my own way in the end.",
+    {
+      question: "It is. Are you?",
       answers: {
-        a: "Immanuel Kant",
-        b: "Tally Weijl",
-        c: "Margaret Thatcher"
-      },
-      correctAnswer: "c",
-	  explanation: "<a href=\"https://simple.wikiquote.org/wiki/Margaret_Thatcher\">Correct answer</a>: c"
-    },
-	{
-      question: "I believe in redefining my impossible.",
-      answers: {
-        a: "Nikola Tesla",
-        b: "Nike",
-        c: "Elon Musk"
+        a: "Abraham Lincoln",
+        b: "The Independent",
+        c: "Tim Berners-Lee"
       },
       correctAnswer: "b",
-	  explanation: "<a href=\"https://www.slideshare.net/KennethHungchiuming/winning-the-story-wars-part-2-ba-178-team-chicks\">Correct answer</a>: b"
-    },
-	{
-      question: "You can't cross the sea merely by standing and staring at the water.",
-      answers: {
-        a: "Aristotele",
-        b: "Lloyds Bank",
-        c: "Rabindranath Tagore"
-      },
-      correctAnswer: "c",
-	  explanation: "<a href=\"https://www.amazon.com/Rabindranath-Tagores-King-Dark-Chamber/dp/1780009593\">Correct answer</a>: c"
-    }
+	  explanation: "<a href=\"https://www.creativereview.co.uk/it-is-are-you-slogan/\">Correct answer</a>: b"
+    },	
+	# Complaining is not a strategy, Jeff Bezos
+	# Thank you for making this day necessary.  Yogi Berra
   ];
   
   function buildQuiz() {
