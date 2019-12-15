@@ -8,12 +8,12 @@ function main() {
         c: "Japanese proverb"
       },
       correctAnswer: "c",
-	  explanation: "<a href=\"https://ja.wikipedia.org/wiki/%E9%98%BF%E6%B3%A2%E8%B8%8A%E3%82%8A\">Correct answer</a>: c (踊る阿呆に見る阿呆、同じ阿呆なら踊らな損々)"
+	  explanation: "<a href=\"https://japanese.livejournal.com/1904228.html\">Correct answer</a>: c"
     },
 	{
       question: "Those who look for seashells will find seashells; those who open them will find pearls.",
       answers: {
-        a: "Jane Austen",
+        a: "Nâzım Hikmet",
         b: "Club Med",
         c: "Abu Hamid Al-Ghazali"
       },
@@ -21,14 +21,14 @@ function main() {
 	  explanation: "<a href=\"https://en.wikiquote.org/wiki/Abu_Hamid_al-Ghazali\">Correct answer</a>: c"
     },
    {
-      question: "We travel not to escape life but for life not to escape us.",
+      question: "If you see a shark, punch it on the nose.",
       answers: {
-        a: "James Hilton",
-        b: "Budget travel",
+        a: "Siddharta Gautama",
+        b: "TUI brewery",
         c: "Earnest Hemingway"
       },
       correctAnswer: "b",
-	  explanation: "<a href=\"https://www.pinterest.co.kr/pin/271553052509628283/\">Best answer</a>: b (origin unclear, used by different companies)"
+	  explanation: "<a href=\"\">Correct answer</a>: b"
     },
   ];
   
