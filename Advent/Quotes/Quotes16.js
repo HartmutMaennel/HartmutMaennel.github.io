@@ -1,35 +1,7 @@
 function main() {
   const myQuestions = [
-  	{
-      question: "Complaining is not a strategy.",
-      answers: {
-        a: "孫子",
-        b: "US Army",
-        c: "Jeff Bezos"
-      },
-      correctAnswer: "c",
-	  explanation: "<a href=\"http://the-amazon-way.com/blog/60-minutes-complaining-is-not-a-strategy-2/\">Correct answer</a>: c"
-    },
-	{
-      question: "When You Come to a Fork in the Road, Take It.",
-      answers: {
-        a: "Heraclitus of Ephesus",
-        b: "American Express",
-        c: "Yogi Berra"
-      },
-      correctAnswer: "c",
-	  explanation: "<a href=\"https://quoteinvestigator.com/2013/07/25/fork-road/\">Correct answer</a>: c"
-    },
-	{
-      question: "Sometimes you feel like a nut. Sometimes you don't.",
-      answers: {
-        a: "Bertrand Russell",
-        b: "Hershey's",
-        c: "Oliver Sacks"
-      },
-      correctAnswer: "b",
-	  explanation: "<a href=\"https://www.businessinsider.com/the-greatest-slogans-and-taglines-in-advertising-history-2019-7?r=US&IR=T#sometimes-you-feel-like-a-nut-sometimes-you-dont-6/\">Correct answer</a>: b"
-    }
+	# Complaining is not a strategy, Jeff Bezos
+	# Thank you for making this day necessary.  Yogi Berra
   ];
   
   function buildQuiz() {
