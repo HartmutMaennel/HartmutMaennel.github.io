@@ -1,34 +1,34 @@
 function main() {
   const myQuestions = [
-  	{
-      question: "We're fools whether we dance or not, so we might as well dance.",
+   {
+      question: "Be trustworthy, be down-to-earth, be fond of learning, and practice earnestly.",
       answers: {
-        a: "Martha Graham",
-        b: "TUI holidays",
-        c: "Japanese proverb"
+        a: "John Quincy Adams",
+        b: "Tata Consulting",
+        c: "Yantai University"
       },
       correctAnswer: "c",
-	  explanation: "<a href=\"https://japanese.livejournal.com/1904228.html\">Correct answer</a>: c"
+	  explanation: "<a href=\"https://en.wikipedia.org/wiki/List_of_university_and_college_mottos\">Correct answer</a>: c (守信 求实 好学 力行)"
     },
 	{
-      question: "Those who look for seashells will find seashells; those who open them will find pearls.",
+      question: "What will be more important in the future, the right skill set or mindset?",
       answers: {
-        a: "Nâzım Hikmet",
-        b: "Club Med",
-        c: "Abu Hamid Al-Ghazali"
-      },
-      correctAnswer: "c",
-	  explanation: "<a href=\"https://en.wikiquote.org/wiki/Abu_Hamid_al-Ghazali\">Correct answer</a>: c"
-    },
-   {
-      question: "If you see a shark, punch it on the nose.",
-      answers: {
-        a: "Siddharta Gautama",
-        b: "TUI brewery",
-        c: "Earnest Hemingway"
+        a: "Richard Sennett",
+        b: "EY Consulting",
+        c: "Malcolm Gladwell"
       },
       correctAnswer: "b",
-	  explanation: "<a href=\"\">Correct answer</a>: b"
+	  explanation: "<a href=\"EY.JPG\">Correct answer</a>: b"
+    },
+	{
+      question: "Power is nothing without control.",
+      answers: {
+        a: "George Orwell",
+        b: "Pirelli",
+        c: "Vladimir Lenin"
+      },
+      correctAnswer: "b",
+	  explanation: "<a href=\"https://www.pirelli.com/global/en-ww/life/power-is-nothing-without-control-celebrates-25-years\">Correct answer</a>: b"
     },
   ];
   
