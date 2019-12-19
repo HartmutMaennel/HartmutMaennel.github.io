@@ -1,5 +1,15 @@
 function main() {
   const myQuestions = [
+  	{
+      question: "Thought is only a flash between two long nights, but this flash is everything.",
+      answers: {
+        a: "Euclid",
+        b: "Swami Vivekananda",
+        c: "Henry Poincaré"
+      },
+      correctAnswer: "c",
+	  explanation: "<a href=\"https://en.wikiquote.org/wiki/Talk:Henri_Poincar%C3%A9\">Correct answer</a>: c"
+    },
    {
       question: "Dieu est le compactifié d'Alexandrov de l'univers",
       answers: {
@@ -19,16 +29,6 @@ function main() {
       },
       correctAnswer: "c",
 	  explanation: "<a href=\"https://books.google.ch/books?id=QD8BCAAAQBAJ&pg=PA53&lpg=PA53&dq=Dehn+It+is+a+bourgeois,+who+still+does+algebra&source=bl&ots=oaHaIbbI6s&sig=ACfU3U2cyMG72Xw07kJEeGxxKtSwldGRQw&hl=en&sa=X&ved=2ahUKEwj9yc6-ksDmAhUcwcQBHYDmDRkQ6AEwAnoECAkQAQ#v=onepage&q=Dehn%20It%20is%20a%20bourgeois%2C%20who%20still%20does%20algebra&f=false\">Correct answer</a>: c"
-    },
-	{
-      question: "Thought is only a flash between two long nights, but this flash is everything.",
-      answers: {
-        a: "Euclid",
-        b: "Swami Vivekananda",
-        c: "Henry Poincaré"
-      },
-      correctAnswer: "c",
-	  explanation: "<a href=\"https://en.wikiquote.org/wiki/Talk:Henri_Poincar%C3%A9\">Correct answer</a>: c"
     },
   ];
   
