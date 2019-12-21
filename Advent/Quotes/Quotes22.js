@@ -23,9 +23,9 @@ function main() {
 	{
       question: "Mind is infinite and self-ruled, and is mixed with nothing, but is alone itself by itself.",
       answers: {
-        a: "Henri Poincaré",
+        a: "René Descartes",
         b: "Anaxagoras",
-        c: "René Descartes"
+        c: "Henri Poincaré"
       },
       correctAnswer: "b",
 	  explanation: "<a href=\"https://en.wikiquote.org/wiki/Mind\">Correct answer</a>: b"
