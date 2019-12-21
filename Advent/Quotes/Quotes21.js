@@ -32,6 +32,7 @@ function main() {
     }
   ];
   // If one proves the equality of two numbers a and b by showing first that a <=b and then that a >= b, it is unfair; one should instead show that they are really equal by disclosing the inner ground for their equality.
+  // If one proves the equality of two numbers a and b by showing first that a&le; b and then that a&ge; b, it is unfair; one should instead show that they are really equal by disclosing the inner ground for their equality.
   // "If one proves the equality of two numbers \\(a\\) and \\(b\\) by showing first that \\(a\\leq b\\) and then that \\(a\\geq b\\), it is unfair; one should instead show that they are really equal by disclosing the inner ground for their equality.",
   
   function buildQuiz() {
